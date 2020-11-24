@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>TOP</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+            integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+<body>
+    <img src="img/logo.png" alt="" class="logo">
+
+    <header>
+        <nav class="nav">
+            <ul>
+                <li><a href="index.html">TOP</a></li>
+                <li><a href="html/mame.html">豆知識</a></li>
+                <li><a href="html/arrange.html">アレンジレシピ</a></li>
+            </ul>
+        </nav>
+        <button type="button" id="navbtn"></button>
+    </header>
+    
+    <img src="img/top.png" alt="" class="top_img">
+
+    <div class="container1">
+        <div class="title">
+            実はこんなにあった！
+            <div class="title_2"> 世界旅行のカップヌードル！ </div>
+        </div>
+    </div>
+
+    <!--トムヤムクン-->
+    <img src="img/1.png" alt="" class="title_img">
+    <div class="container_tom">
+            海老の入った酸っぱくて辛い、 <br>
+            香りが特徴的な世界三大スープ。 <br>
+            トムは『煮る・焼く』 <br>
+            ヤムは『混ぜる』<br>
+            クンは『海老』を意味する
+    </div>
+
+    <!--グリーンカレー-->
+
+    <img src="img/2.png" alt="" class="title_img">
+    <div class="container_green">
+    多くの香辛料とハーブを  <br>
+    たくさんの具材と炒め、 <br>
+    ココナッツミルクで煮込んだもの。 <br>
+    日本ではタイカレーとも呼ぶが、<br>
+    正確にはカレー料理ではなく、 <br>
+    「ゲーン」という <br>
+    タイ料理の汁物の一種。
+    </div>
+
+    <!--ペペロン-->
+    <img src="img/3.png" alt="" class="title_img">
+    <div class="container_pepe">
+    正式名称は <br>
+    『アーリオ・オーリオ・
+    <br> ペペロンチーノ』 <br>
+    『アーリオ』はニンニク、 <br>
+    『オーリオ』はオリーブオイル、 <br>
+    『ペペロンチーノ』はトウガラシ<br>
+    を意味する。<br>
+    名称の由来となった素材をソース<br>
+    に用いたシンプルなパスタ。<br>
+    イタリアでは絶望の淵に
+    <br>
+    立たされても作れる
+    
+    <br>という意味で<br>
+    「絶望のパスタ」という<br>
+    呼び名もある。
+    </div>
+
+    <!--世界の味-->
+    <div class="title_arrange">
+        作ってみよう！世界の味！
+    </div>
+    <div class="haikei">
+        ここに画像が入ります
+    </div>
+    <div class="kwsk">
+        <a href="html/arrange.html">
+        詳しくはこちら→
+        </a>
+    </div> 
+
+        <footer>
+            <div class="footer_sns">
+        
+                <img src="../img/YT.png" alt="" class="sns">
+                <img src="../img/Tw.png" alt="" class="sns">
+                <img src="../img/FB.png" alt="" class="sns">
+            </div>
+            <small>Copyright © NISSIN FOOD HOLDINGS CO.,LTD. All Rights Reserved.</small>
+        </footer>
+
+            <script>
+                document.getElementById("navbtn").onclick = function () {
+                    document.querySelector('html').classList.toggle('open');
+                }
+            </script>
+</body>
+</html>
