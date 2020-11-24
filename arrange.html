@@ -1,0 +1,161 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="arrange.css">
+    <title>アレンジレシピ</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+<body>
+    <img src="../img/logo.png" alt="" class="logo">
+
+        <header>
+            <nav class="nav">
+                <ul>
+                    <li><a href="../index.html">TOP</a></li>
+                    <li><a href="mame.html">豆知識</a></li>
+                    <li><a href="arrange.html">アレンジレシピ</a></li>
+                </ul>
+            </nav>
+            <button type="button" id="navbtn"></button>
+        </header>
+
+    <img src="../img/arrange_top.png" alt=""  class="top_img">
+
+
+    <div id="app">
+        <accordion>
+            <div slot="title">クラムチャウダー</div>
+            <div class="details" slot="detail">
+                <img src="../img/milk.png" alt="" class="mg_left">
+
+                    <div class="haikei">
+                        ここに画像が入ります
+                    </div>
+
+                <p>１．シーフード味のカップヌードルに温めた牛乳とお湯を半分ずつ入れる。 </p>
+                <p>
+                ２．３分待って完成。
+                </p>
+                </p>
+            </div>
+        </accordion>
+        <accordion>
+            <div slot="title">酸辣湯麺</div>
+            <div class="details" slot="detail">
+                <img src="../img/ra-yu.png" alt="">
+
+                    <div class="haikei">
+                        ここに画像が入ります
+                    </div>
+
+
+                <p>１．いつも通りにカップヌードルを作る。</p>
+                <p>２．酢（小さじ１）とラー油（適量）を入れて完成。</p>
+            </div>
+        </accordion>
+        <accordion>
+            <div slot="title">ミネストローネ</div>
+            <div class="details" slot="detail">
+                <img src="../img/mine.png" alt="" class="mg_left">
+
+                    <div class="haikei">
+                        ここに画像が入ります
+                    </div>
+
+
+                <p>１．普段より少なめのお湯でカップヌードルを作る。</p>
+                <p>２．３分経ったら、トマトジュース（常温）を１缶入れる。</p>
+                <p>３．よく混ぜれば完成。</p>
+
+            </div>
+        </accordion>
+        <accordion>
+            <div slot="title">カルボナーラ</div>
+            <div class="details" slot="detail">
+                <img src="../img/karu.png" alt="">
+
+                    <div class="haikei">
+                        ここに画像が入ります
+                    </div>
+
+
+                <p>１．シーフードヌードルに温めた牛乳とお湯を半分ずつ入れる。</p>
+                <p>２．３分経ったら粉チーズを入れてよく混ぜる。</p>
+                <p>３．温泉たまごを載せて、お好みでブラックペッパーをかけて完成</p>
+
+            </div>
+        </accordion>
+    </div>
+    
+    <footer>
+        <div class="footer_sns">
+
+            <img src="../img/YT.png" alt="" class="sns">
+            <img src="../img/Tw.png" alt="" class="sns">
+            <img src="../img/FB.png" alt="" class="sns">
+        </div>
+        <small>Copyright © NISSIN FOOD HOLDINGS CO.,LTD. All Rights Reserved.</small>
+    </footer>
+    <script>
+
+        document.getElementById("navbtn").onclick = function () {
+            document.querySelector('html').classList.toggle('open');
+        }
+        Vue.component('accordion', {
+            template: `
+            <div class="accordion">
+              <a class="toggle" @click="toggle()">
+                <slot name="title"></slot>
+                <transition name="rotation">
+                  <i class="fas fa-chevron-down" v-if="!isOpen"></i>
+                </transition>
+                <transition name="rotation">
+                  <i class="fas fa-chevron-up" v-if="isOpen"></i>
+                </transition>
+              </a>
+              <transition name="accordion" @before-enter="beforeEnter" @enter="enter" @before-leave="beforeLeave" @leave="leave">
+                <div class="accordion-body" v-if="isOpen">
+                  <slot name="detail"></slot>
+                </div>
+              </transition>
+            </div>
+            `,
+
+            data() {
+                return {
+                    isOpen: false,
+                };
+            },
+            methods: {
+                toggle: function () {
+                    this.isOpen = !this.isOpen;
+                },
+                beforeEnter: function (el) {
+                    el.style.height = '0';
+                },
+                enter: function (el) {
+                    el.style.height = el.scrollHeight + 'px';
+                },
+                beforeLeave: function (el) {
+                    el.style.height = el.scrollHeight + 'px';
+                },
+                leave: function (el) {
+                    el.style.height = '0';
+                }
+            }
+        });
+
+        new Vue({
+            el: '#app'
+        });
+    </script>
+</body>

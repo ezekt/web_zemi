@@ -1,0 +1,231 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+@media (max-width:767px){
+  html,body{
+    overflow-x: hidden;
+  }
+  .nav{
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255, 0, 0, 0.749);
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* 右からスライド */
+    transition: left 0.5s;
+  }
+  .nav ul{
+    list-style:none;
+  }
+  .nav li:not(:last-child){
+    margin-bottom: 30px;
+  }
+  .nav a{
+    color: #ffffff;
+  }
+}
+/* ナビゲーションボタン（開く） */
+#navbtn{
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 0;
+  outline: none;
+  border: none;
+  background: none;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+
+#navbtn::before,
+#navbtn::after{
+  content : '';
+  display: block;
+  height: 1px;
+  background-color: #333333;
+  transform: translateY(10px);
+  transition: 0.3s ease-in-out;
+}
+
+#navbtn::before{
+  transform: translateY(-10px);
+  box-shadow: 0 10px #333333;
+}
+
+/* ナビゲーションボタン（閉じる） */
+.open #navbtn{
+  z-index: 100;
+}
+.open #navbtn::before{
+  transform: rotate(-45deg);
+  box-shadow: none;
+}
+.open #navbtn::after{
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+/* ナビゲーションメニュー 開いた時*/
+.open .nav{
+  left: 0;
+}
+
+@media(min-width: 768px){
+  /* PCではボタン非表示 */
+  #navbtn{
+    display:none;
+  }
+  /* ヘッダーは横並び */
+  header{
+    display: flex;
+    align-items: center;
+  }
+  /* メニューを右に寄せる */
+  .nav{
+    /* 右寄せ */
+    margin-left: auto;
+  }
+  .nav ul{
+    display: flex;
+    list-style:none
+  }
+  .nav ul li:not(:first-child){
+    margin-left:20px;
+  }
+  .nav ul li a { 
+    color: #000000;
+  }
+}
+
+.top_img {
+    margin-top: 70px;
+}
+.logo{
+    position: fixed;
+}
+
+
+    .accordion {
+      color: #1a1c1d;
+      border-left: 10px solid rgba(0, 0, 0, 0.12);
+    }
+
+    .toggle {
+      position: relative;
+      color: #1a1c1d;
+      display: block;
+      font-weight: bold;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    .toggle i {
+      position: absolute;
+      right: 15px;
+      top: 30%;
+      font-size: 1.5em;
+      transition: 0.3s ease-in-out;
+    }
+
+    .toggle:hover {
+      color: rgba(229, 229, 229, 0.965);
+    }
+
+    .accordion-body {
+      overflow: hidden;
+      transition: .3s ease-in-out;
+    }
+
+    .accordion:nth-child(1) {
+      background: #fffcee;
+    }
+
+    .accordion:nth-child(2) {
+      background: #ffa178;
+    }
+
+    .accordion:nth-child(3) {
+      background: #ff6161;
+    }
+    .accordion:nth-child(4) {
+      background: #ffe99c
+    }
+
+    .details {
+      padding: 10px;
+    }
+
+    .rotation-enter, .rotation-leave-to {
+      transform: rotateX(180deg)
+    }
+
+    .mg_left {
+        margin-left: 60px;
+    }
+
+.sns {
+    width: 50px;
+}
+
+.footer_sns {
+    display: flex;
+    margin-right: 20px;
+    margin-top: 20px;
+justify-content: flex-end;
+}
+
+.haikei {
+    background-color: grey;
+    height: 200px;
+}
